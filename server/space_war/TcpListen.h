@@ -11,6 +11,8 @@
  * Created on 13 de Abril de 2019, 15:39
  */
 
+#include <unistd.h> 
+#include <stdio.h> 
 #include <sys/socket.h> 
 #include <stdlib.h> 
 #include <netinet/in.h> 
@@ -23,6 +25,7 @@
 #define ERR_SOCKOPT -2
 #define ERR_BIND -3
 #define ERR_LISTEN -4
+#define ERR_ACCEPT -5
 
 class TcpListen {
 public:
@@ -34,8 +37,8 @@ public:
     void SetPort(unsigned short int port);
     void SetQueue(unsigned int queue);
     
-    int open();
-    int accept();
+    int listenOpen();
+    int listenAccept();
     
 private:
     unsigned int queue;

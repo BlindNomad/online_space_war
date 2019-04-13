@@ -35,7 +35,7 @@ void TcpListen::SetQueue(unsigned int queue) {
     this->queue = queue;
 }
 
-int TcpListen::open() {
+int TcpListen::listenOpen() {
     int opt = 1;
     
     if ((this->handle = socket(AF_INET, SOCK_STREAM, 0)) == 0) { 
@@ -56,16 +56,27 @@ int TcpListen::open() {
     if (bind(this->handle, (struct sockaddr *)&this->sock_in,sizeof(this->sock_in))<0){ 
         return ERR_BIND;
     } 
-    if (listen(this->handle, this->queue) < 0) 
-    { 
-        perror("listen"); 
-        exit(EXIT_FAILURE); 
+    if (listen(this->handle, this->queue) < 0) { 
+        return ERR_LISTEN;
     } 
+    
+    return 0;
     
 }
 
-int TcpListen::accept() {
-
+int TcpListen::listenAccept() {
+    int socketFd;
+    int addrlen;
+    
+    addrlen = sizeof(this->sock_in);
+    
+    if ((socketFd = accept(this->handle, (struct sockaddr *)&this->sock_in, (socklen_t*)&addrlen))<0) 
+    { 
+        return ERR_ACCEPT;
+    } 
+    
+    return socketFd;
+    
 }
 
 
