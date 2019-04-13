@@ -1,2 +1,2 @@
 # online_space_war
-Jogo de naves espacial
+Jogo de nave espacial
