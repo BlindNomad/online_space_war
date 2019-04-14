@@ -6,13 +6,14 @@
 
 #include "Planet.h"
 
+
 Planet::Planet() {
 }
 
 Planet Planet::PlanetGenerate() {
 
     Planet p;
-    int rand = RandomNumber(100);
+    int rand = Random::RandomNumber(100);
     
     if( rand >= 1 && rand <= 4 )    { rand = GAIA_TYPE;     }
     if( rand >= 5 && rand <= 26 )   { rand = TROPICAL_TYPE; }
@@ -24,28 +25,28 @@ Planet Planet::PlanetGenerate() {
         
         case GAIA_TYPE:
             p.type = GAIA_TYPE;
-            p.foodProduction = RandomNumber(1) + 4; // Min 4 - Max 5
-            p.production = RandomNumber(1) + 4; // Min 4 - Max 5
+            p.foodProduction = Random::RandomNumber(1) + 4; // Min 4 - Max 5
+            p.production = Random::RandomNumber(1) + 4; // Min 4 - Max 5
             break;
         case TROPICAL_TYPE:
             p.type = TROPICAL_TYPE;
-            p.foodProduction = RandomNumber(1) + 3; // Min 3 - Max 4
-            p.production = RandomNumber(1) + 2; // Min 2 - Max 3
+            p.foodProduction = Random::RandomNumber(1) + 3; // Min 3 - Max 4
+            p.production = Random::RandomNumber(1) + 2; // Min 2 - Max 3
             break;
         case CAVERNOUS_TYPE:
             p.type = CAVERNOUS_TYPE;
-            p.foodProduction = RandomNumber(1) + 2; // Min 2 - Max 3
-            p.production = RandomNumber(1) + 3; // Min 3 - Max 4
+            p.foodProduction = Random::RandomNumber(1) + 2; // Min 2 - Max 3
+            p.production = Random::RandomNumber(1) + 3; // Min 3 - Max 4
             break;
         case TUNDRA_TYPE:
             p.type = TUNDRA_TYPE;
-            p.foodProduction = RandomNumber(1) + 2; // Min 2 - Max 3
-            p.production = RandomNumber(1) + 1; // Min 1 - Max 2
+            p.foodProduction = Random::RandomNumber(1) + 2; // Min 2 - Max 3
+            p.production = Random::RandomNumber(1) + 1; // Min 1 - Max 2
             break;
         case DESERT_TYPE:
             p.type = DESERT_TYPE;
-            p.foodProduction = RandomNumber(1) + 1; // Min 1 - Max 2
-            p.production = RandomNumber(1) + 2; // Min 2 - Max 3
+            p.foodProduction = Random::RandomNumber(1) + 1; // Min 1 - Max 2
+            p.production = Random::RandomNumber(1) + 2; // Min 2 - Max 3
             break;
         
     }
@@ -53,18 +54,21 @@ Planet Planet::PlanetGenerate() {
     return p;
 }
 
-int Planet::RandomNumber(int max){
-    
-    srand(time(0));
-    
-    return rand() % (max + 1); 
+void Planet::AddHangar(Ship newShip){
+    this->hangar.insert(newShip);
+}
+
+Ship Planet::RemHangar(int id){
+    Ship ship = this->hangar.get_allocator(id);
+    this->hangar.remove(id);
+    return ship;
 }
 
 int Planet::GetType(){
     return type;
 }
 
-/*string Planet::getNameType(){
+string Planet::getNameType(){
     
     string retorno;
     
@@ -88,7 +92,6 @@ int Planet::GetType(){
     
     return retorno;
 }
-*/
 
 int Planet::GetProduction(){
     return production;

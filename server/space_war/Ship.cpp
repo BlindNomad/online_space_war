@@ -61,7 +61,7 @@ Ship::Ship(int type) {
 void Ship::SetDamage(int damage){
     defense -= damage;
     if(defense <= 0){
-        this->delete;   // Destroi o objeto
+        //this->delete;   // Destroi o objeto
     }
 }
 

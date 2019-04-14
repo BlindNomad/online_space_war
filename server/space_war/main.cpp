@@ -18,7 +18,6 @@
 #include "TcpListen.h"
 #include "Player.h"
 #include "Players.h"
-#include "Planet.h"
 
 using namespace std;
 
@@ -26,10 +25,6 @@ using namespace std;
  * 
  */
 int main(int argc, char** argv) {
-   
-    Planet p;
-    p = p.PlanetGenerate();
-    printf("%d - %d - %d ", p.GetType(), p.GetFoodProduction(), p.GetProduction());
     
     int ret;
     mutex mtx;

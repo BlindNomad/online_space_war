@@ -11,11 +11,14 @@
  * Created on 13 de Abril de 2019, 23:40
  */
 
-#include <stdlib.h>
-#include <ctime>
+#include <list>
 #include <string>
 
+using namespace std;
+
 //#include "Player.h"
+#include "Ship.h"
+#include "Random.h"
 
 #ifndef PLANET_H
 #define PLANET_H
@@ -32,10 +35,13 @@ public:
     Planet();
     Planet PlanetGenerate();
     
+    void AddHangar(Ship newShip);
+    Ship RemHangar(int id);
+    
     int GetType();
     int GetProduction();
     int GetFoodProduction();
-    //string getNameType();
+    string getNameType();
     
     void SetType(int type);
     void SetProduction(int production);
@@ -45,10 +51,9 @@ private:
     unsigned int type;
     unsigned int production;
     unsigned int foodProduction;
-    //Player player;
-    // FALTANDO: ATRIBUTO HANGAR
-    
-    int RandomNumber(int max);   
+    list<Ship> hangar;
+    //Player player;   Dono do planta
+
 };
 
 #endif /* PLANET_H */
