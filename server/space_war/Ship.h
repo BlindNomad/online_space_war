@@ -36,8 +36,7 @@ public:
     int GetBomb();
     int GetSpeed();
     //Player GetPlayer;
-    
-    
+
 private:
     int type;
     int attack;

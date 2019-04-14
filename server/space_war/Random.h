@@ -17,12 +17,7 @@
 #include <stdlib.h>
 #include <ctime>
 
-class Random{
-public:
-    int RandomNumber(int max);
-    
-private:
-    
-}
+int RandomNumber(int max);
+
 #endif /* RANDOM_H */
 
