@@ -48,9 +48,6 @@ int main(int argc, char** argv) {
     } while (ret > 0);
 
 
-    send(ret, "Ola cliente\n", 12, 0);
-    shutdown(ret, SHUT_RDWR);
-
 
 
     return 0;
