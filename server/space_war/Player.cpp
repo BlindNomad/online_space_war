@@ -34,6 +34,15 @@ void Player::setPlayers(Players *players) {
     this->players = players;
 }
 
+int Player::getHandle() const {
+    return handle;
+}
+
+void Player::setName(string name) {
+    this->name = name;
+}
+
+
 void Player::initThread(Player *player) {
     int bytes;
     char msg[64];

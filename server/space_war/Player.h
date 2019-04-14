@@ -28,6 +28,11 @@ public:
     
     void setPlayers(Players *players);
     static void initThread(Player *player);
+    
+    int getHandle() const;
+    void setName(string name);
+
+
 
 private:
     

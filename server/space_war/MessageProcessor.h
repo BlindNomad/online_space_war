@@ -14,17 +14,19 @@
 #ifndef MESSAGEPROCESSOR_H
 #define MESSAGEPROCESSOR_H
 
+#include "Player.h"
+
+using namespace std;
+
 class MessageProcessor {
-    enum {
-        MESSAGE_NAME_REQUEST,
-        MESSAGE_CONFIG_MAP_REQUEST
-                
-    };
+   
     
 public:
     MessageProcessor();
     MessageProcessor(const MessageProcessor& orig);
     virtual ~MessageProcessor();
+    
+    static int requestName(int handle, Player *player);
 private:
     
 
