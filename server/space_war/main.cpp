@@ -14,6 +14,7 @@
 #include <cstdlib>
 #include <cstdio>
 #include <condition_variable>
+#include <time.h>
 
 #include "TcpListen.h"
 #include "Player.h"
@@ -29,6 +30,8 @@ int main(int argc, char** argv) {
     int ret;
     mutex mtx;
     Players players;
+    
+    srand(time(0));
 
     printf("Iniciando o servidor\n");
 
