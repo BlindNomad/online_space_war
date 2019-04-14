@@ -15,8 +15,8 @@ NM=nm
 CCADMIN=CCadmin
 RANLIB=ranlib
 CC=gcc
-CCC=g++
-CXX=g++
+CCC=g++-5
+CXX=g++-5
 FC=gfortran
 AS=as
 
@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/Planet.o \
 	${OBJECTDIR}/Player.o \
 	${OBJECTDIR}/Players.o \
 	${OBJECTDIR}/TcpListen.o \
@@ -64,6 +65,11 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/space_war: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/space_war ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/Planet.o: Planet.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Planet.o Planet.cpp
 
 ${OBJECTDIR}/Player.o: Player.cpp
 	${MKDIR} -p ${OBJECTDIR}
