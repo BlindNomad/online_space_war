@@ -25,6 +25,7 @@ using namespace std;
  * 
  */
 int main(int argc, char** argv) {
+    
     int ret;
     mutex mtx;
     Players players;
@@ -46,7 +47,6 @@ int main(int argc, char** argv) {
         players.addPlayer(player);
         mtx.unlock();
     } while (ret > 0);
-
 
 
 

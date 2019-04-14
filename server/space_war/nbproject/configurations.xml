@@ -4,14 +4,32 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Arquivos de Cabeçalho"
                    projectFiles="true">
-      <itemPath>Player.h</itemPath>
+      <logicalFolder name="f1" displayName="Res" projectFiles="true">
+        <itemPath>Planet.h</itemPath>
+        <itemPath>Player.h</itemPath>
+        <itemPath>Ship.h</itemPath>
+        <itemPath>Square.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2" displayName="Tools" projectFiles="true">
+        <itemPath>Random.h</itemPath>
+      </logicalFolder>
+      <itemPath>Map.h</itemPath>
       <itemPath>Players.h</itemPath>
       <itemPath>TcpListen.h</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Arquivos de Código-Fonte"
                    projectFiles="true">
-      <itemPath>Player.cpp</itemPath>
+      <logicalFolder name="f1" displayName="Res" projectFiles="true">
+        <itemPath>Planet.cpp</itemPath>
+        <itemPath>Player.cpp</itemPath>
+        <itemPath>Ship.cpp</itemPath>
+        <itemPath>Square.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2" displayName="Tools" projectFiles="true">
+        <itemPath>Random.cpp</itemPath>
+      </logicalFolder>
+      <itemPath>Map.cpp</itemPath>
       <itemPath>Players.cpp</itemPath>
       <itemPath>TcpListen.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
@@ -19,6 +37,17 @@
     <logicalFolder name="ResourceFiles"
                    displayName="Arquivos de Recurso"
                    projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Arquivos de Teste"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Arquivos Importantes"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Arquivos de Teste"
@@ -46,6 +75,14 @@
           <commandLine>-l pthread</commandLine>
         </ccTool>
       </compileType>
+      <item path="Map.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Map.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Planet.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Planet.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Player.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Player.h" ex="false" tool="3" flavor2="0">
@@ -53,6 +90,18 @@
       <item path="Players.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Players.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Random.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Random.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Ship.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Ship.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Square.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Square.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="TcpListen.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -82,6 +131,14 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="Map.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Map.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Planet.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Planet.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Player.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Player.h" ex="false" tool="3" flavor2="0">
@@ -89,6 +146,18 @@
       <item path="Players.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Players.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Random.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Random.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Ship.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Ship.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Square.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Square.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="TcpListen.cpp" ex="false" tool="1" flavor2="0">
       </item>
