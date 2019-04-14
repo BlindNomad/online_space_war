@@ -5,8 +5,8 @@
  */
 
 /* 
- * File:   newfile.h
- * Author: dev
+ * File:   Planet.h
+ * Author: José C. Pereira <JPereira1330>
  *
  * Created on 13 de Abril de 2019, 23:40
  */
@@ -37,9 +37,9 @@ public:
     int GetFoodProduction();
     //string getNameType();
     
-    void SetType();
-    void SetProduction();
-    void SetFoodProduction();
+    void SetType(int type);
+    void SetProduction(int production);
+    void SetFoodProduction(int food);
     
 private:
     unsigned int type;

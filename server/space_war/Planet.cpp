@@ -97,3 +97,15 @@ int Planet::GetProduction(){
 int Planet::GetFoodProduction(){
     return foodProduction;
 }
+
+void Planet::SetType(int type){
+    this->type = type;
+}
+
+void Planet::SetFoodProduction(int food) {
+    this->foodProduction = food;
+}
+
+void Planet::SetProduction(int production){
+    this->production = production;
+}
