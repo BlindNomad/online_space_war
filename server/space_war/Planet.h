@@ -13,6 +13,7 @@
 
 #include <list>
 #include <string>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -35,9 +36,6 @@ public:
     Planet();
     Planet PlanetGenerate();
     
-    void AddHangar(Ship newShip);
-    Ship RemHangar(int id);
-    
     int GetType();
     int GetProduction();
     int GetFoodProduction();
@@ -51,7 +49,6 @@ private:
     unsigned int type;
     unsigned int production;
     unsigned int foodProduction;
-    list<Ship> hangar;
     //Player player;   Dono do planta
 
 };

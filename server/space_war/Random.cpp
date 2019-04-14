@@ -6,7 +6,7 @@
 
 #include "Random.h"
 
-int Random::RandomNumber(int max){
+int RandomNumber(int max){
     
     srand(time(0));
     

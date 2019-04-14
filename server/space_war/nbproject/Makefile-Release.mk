@@ -35,13 +35,10 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/Map.o \
 	${OBJECTDIR}/Planet.o \
 	${OBJECTDIR}/Player.o \
 	${OBJECTDIR}/Players.o \
-	${OBJECTDIR}/Random.o \
 	${OBJECTDIR}/Ship.o \
-	${OBJECTDIR}/Square.o \
 	${OBJECTDIR}/TcpListen.o \
 	${OBJECTDIR}/main.o
 
@@ -70,11 +67,6 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/space_war: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/space_war ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/Map.o: Map.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Map.o Map.cpp
-
 ${OBJECTDIR}/Planet.o: Planet.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -90,20 +82,10 @@ ${OBJECTDIR}/Players.o: Players.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Players.o Players.cpp
 
-${OBJECTDIR}/Random.o: Random.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Random.o Random.cpp
-
 ${OBJECTDIR}/Ship.o: Ship.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Ship.o Ship.cpp
-
-${OBJECTDIR}/Square.o: Square.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Square.o Square.cpp
 
 ${OBJECTDIR}/TcpListen.o: TcpListen.cpp
 	${MKDIR} -p ${OBJECTDIR}
