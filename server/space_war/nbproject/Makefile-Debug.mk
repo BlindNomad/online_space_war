@@ -36,6 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/Map.o \
+	${OBJECTDIR}/MessageProcessor.o \
 	${OBJECTDIR}/Planet.o \
 	${OBJECTDIR}/Player.o \
 	${OBJECTDIR}/Players.o \
@@ -74,6 +75,11 @@ ${OBJECTDIR}/Map.o: Map.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Map.o Map.cpp
+
+${OBJECTDIR}/MessageProcessor.o: MessageProcessor.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MessageProcessor.o MessageProcessor.cpp
 
 ${OBJECTDIR}/Planet.o: Planet.cpp
 	${MKDIR} -p ${OBJECTDIR}

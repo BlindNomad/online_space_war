@@ -22,6 +22,11 @@ Players::Players(const Players& orig) {
 Players::~Players() {
 }
 
+void Players::setMtx(mutex* mtx) {
+    this->mtx = mtx;
+}
+
+
 void Players::addPlayer(Player *player) {
     this->players.push_back(player);
 }

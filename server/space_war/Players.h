@@ -12,6 +12,7 @@
  */
 
 #include <list>
+#include <mutex>
 
 #include "Player.h"
 
@@ -27,9 +28,12 @@ public:
     virtual ~Players();
     
     void addPlayer(Player *player);
+    void setMtx(mutex* mtx);
+
     
 private:  
     list<Player *> players;
+    mutex *mtx;
 }; 
 
 #endif /* PLAYERS_H */
