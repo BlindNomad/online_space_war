@@ -13,8 +13,11 @@
 
 #include <cstdlib>
 #include <cstdio>
+#include <condition_variable>
 
 #include "TcpListen.h"
+#include "Player.h"
+#include "Players.h"
 
 using namespace std;
 
@@ -23,22 +26,33 @@ using namespace std;
  */
 int main(int argc, char** argv) {
     int ret;
-    
+    mutex mtx;
+    Players players;
+
     printf("Iniciando o servidor\n");
-    
+
     TcpListen listen(10, 55845);
-    
+
     ret = listen.listenOpen();
     printf("Retorno do open listen: %d\n", ret);
-    
-    ret = listen.listenAccept();
-    printf("Retorno do accept\n");
-    
+
+    do {
+        mtx.lock();
+        ret = listen.listenAccept();
+        printf("Retorno do accept %d\n", ret);
+        Player *player = new Player(ret);
+        player->setPlayers(&players);
+        player->start();
+        players.addPlayer(player);
+        mtx.unlock();
+    } while (ret > 0);
+
+
     send(ret, "Ola cliente\n", 12, 0);
     shutdown(ret, SHUT_RDWR);
-    
-    
-    
+
+
+
     return 0;
 }
 

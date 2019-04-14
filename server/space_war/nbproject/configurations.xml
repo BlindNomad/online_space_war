@@ -4,11 +4,15 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Arquivos de Cabeçalho"
                    projectFiles="true">
+      <itemPath>Player.h</itemPath>
+      <itemPath>Players.h</itemPath>
       <itemPath>TcpListen.h</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Arquivos de Código-Fonte"
                    projectFiles="true">
+      <itemPath>Player.cpp</itemPath>
+      <itemPath>Players.cpp</itemPath>
       <itemPath>TcpListen.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
@@ -39,8 +43,17 @@
       <compileType>
         <ccTool>
           <standard>8</standard>
+          <commandLine>-l pthread</commandLine>
         </ccTool>
       </compileType>
+      <item path="Player.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Player.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Players.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Players.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="TcpListen.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TcpListen.h" ex="false" tool="3" flavor2="0">
@@ -69,6 +82,14 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="Player.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Player.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Players.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Players.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="TcpListen.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TcpListen.h" ex="false" tool="3" flavor2="0">
