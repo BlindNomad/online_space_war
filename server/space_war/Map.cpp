@@ -14,7 +14,6 @@
 #include <cstdio>
 
 #include "Map.h"
-#include "Planet.h"
 
 Map::Map() {
 }
@@ -52,7 +51,6 @@ void Map::MapGenerate(){
             
             // Verifica se a posição já foi utilizada
             if( newCoord.x == l.x && newCoord.y == l.y ){
-                printf(" [ 1 ] %d / %d - %d / %d \n", newCoord.x, newCoord.y, l.x, l.y);
                 regenerate = true;
             }
             
@@ -62,7 +60,6 @@ void Map::MapGenerate(){
             
             // Verifica se existem algum planeta numa distancia igual ou menor do que 2
             if( (( calc_x <= 2 ) && ( calc_x >= -2)) && (( calc_y <= 2 ) && ( calc_y >= -2)) ){
-                printf(" [ 2 ] %d / %d - %d / %d \n", newCoord.x, newCoord.y, l.x, l.y);
                 regenerate = true;
             }
             
@@ -87,3 +84,8 @@ void Map::MapGenerate(){
     }
 
 }
+
+list<> Map::getListCoord(){
+    return listCoord;
+}
+

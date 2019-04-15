@@ -16,7 +16,6 @@
 
 #include <list>
 #include <cstdlib>
-#include <iostream> // Apenas para teste
 
 #include "Planet.h"
 
@@ -32,6 +31,8 @@ public:
     virtual ~Map();
     
     void MapGenerate();
+
+    list<> getListCoord();
     
 private:
     struct coordinate *coord;
