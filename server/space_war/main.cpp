@@ -36,7 +36,11 @@ int main(int argc, char** argv) {
     srand(time(0));
 
     printf("Iniciando o servidor\n");
-     
+    
+    // Teste - Criação do mapa.
+    Map m;
+    m.MapGenerate();
+
     TcpListen listen(10, 55845);
 
     ret = listen.listenOpen();

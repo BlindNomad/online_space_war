@@ -12,6 +12,7 @@
  */
 
 #include <cstdio>
+#include <iostream>
 
 #include "Map.h"
 
@@ -24,16 +25,12 @@ Map::Map(const Map& orig) {
 Map::~Map() {
 }
 
-struct coordinate{
-    int x;
-    int y;
-    Planet planet;
-};
 
 void Map::MapGenerate(){
     
+    int x, y;
     bool regenerate = false;
-    coordinate newCoord;
+    Square square;
     this->listCoord.clear();
     
     // Quantia de planetas a serem gerados
@@ -43,20 +40,20 @@ void Map::MapGenerate(){
         regenerate = false;
         
         // Gerando a coordenada de um novo planeta
-        newCoord.x = rand() % MAP_SIZE + 1;
-        newCoord.y = rand() % MAP_SIZE + 1;
-
+        x = rand() % MAP_SIZE + 1;
+        y = rand() % MAP_SIZE + 1;
+        
         // Regras para a criação de planetas
         for(auto l : this->listCoord){
             
             // Verifica se a posição já foi utilizada
-            if( newCoord.x == l.x && newCoord.y == l.y ){
+            if( x == l.getCoordX() && y == l.getCoordY() ){
                 regenerate = true;
             }
             
             // Calculando distancia entre planetas
-            int calc_x = newCoord.x - l.x;
-            int calc_y = newCoord.y - l.y;
+            int calc_x = x - l.getCoordX();
+            int calc_y = y - l.getCoordY();
             
             // Verifica se existem algum planeta numa distancia igual ou menor do que 2
             if( (( calc_x <= 2 ) && ( calc_x >= -2)) && (( calc_y <= 2 ) && ( calc_y >= -2)) ){
@@ -71,10 +68,14 @@ void Map::MapGenerate(){
             // Gerando planeta e inserindo na estrutura
             Planet p;
             p.PlanetGenerate();
-            newCoord.planet = p;
- 
+            square.setCoord(x,y);
+            square.setPlanet(p);
+            
+            // Debug - Coordenada dos planetas
+            printf(" [Debug] Planeta Gerado: [ X:%d / Y:%d ] \n", square.getCoordX(), square.getCoordY());
+            
             // Inserindo na lista
-            this->listCoord.push_back( newCoord );
+            this->listCoord.push_back( square );
             
         }else{ // Caso tenha passado em alguma regra
             regenerate = false;
@@ -85,3 +86,6 @@ void Map::MapGenerate(){
 
 }
 
+list<Square> Map::GetAllSquare(){
+    return this->listCoord;
+}

@@ -40,6 +40,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/Player.o \
 	${OBJECTDIR}/Players.o \
 	${OBJECTDIR}/Ship.o \
+	${OBJECTDIR}/Square.o \
 	${OBJECTDIR}/TcpListen.o \
 	${OBJECTDIR}/main.o
 
@@ -92,6 +93,11 @@ ${OBJECTDIR}/Ship.o: Ship.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Ship.o Ship.cpp
+
+${OBJECTDIR}/Square.o: Square.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Square.o Square.cpp
 
 ${OBJECTDIR}/TcpListen.o: TcpListen.cpp
 	${MKDIR} -p ${OBJECTDIR}

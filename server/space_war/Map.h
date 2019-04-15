@@ -18,6 +18,7 @@
 #include <cstdlib>
 
 #include "Planet.h"
+#include "Square.h"
 
 #define MAP_SIZE 24
 #define PLANET_AMOUNT 12
@@ -31,11 +32,11 @@ public:
     Map(const Map& orig);
     virtual ~Map();
     
-    void MapGenerate();  
+    void MapGenerate();
+    list<Square> GetAllSquare();
         
 private:
-    struct coordinate *coord;
-    list<coordinate> listCoord; 
+    list<Square> listCoord; 
  
 };
 
