@@ -25,19 +25,18 @@
 using namespace std;
 
 class Map {
+    
 public:
     Map();
     Map(const Map& orig);
     virtual ~Map();
     
-    void MapGenerate();
-
-    list<> getListCoord();
-    
+    void MapGenerate();  
+        
 private:
     struct coordinate *coord;
-    list<coordinate> listCoord;
-
+    list<coordinate> listCoord; 
+ 
 };
 
 #endif /* MAP_H */

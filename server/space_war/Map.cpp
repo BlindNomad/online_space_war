@@ -28,7 +28,7 @@ struct coordinate{
     int x;
     int y;
     Planet planet;
-} *coord;
+};
 
 void Map::MapGenerate(){
     
@@ -83,9 +83,5 @@ void Map::MapGenerate(){
         
     }
 
-}
-
-list<> Map::getListCoord(){
-    return listCoord;
 }
 
