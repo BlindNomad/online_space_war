@@ -20,6 +20,8 @@
 #include "Player.h"
 #include "Players.h"
 
+#include "Map.h"
+
 using namespace std;
 
 /*
@@ -34,7 +36,7 @@ int main(int argc, char** argv) {
     srand(time(0));
 
     printf("Iniciando o servidor\n");
-
+    
     TcpListen listen(10, 55845);
 
     ret = listen.listenOpen();

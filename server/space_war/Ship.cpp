@@ -4,11 +4,25 @@
  * and open the template in the editor.
  */
 
+/* 
+ * File:   Ship.cpp
+ * Author: José C. Pereira <JPereira1330>
+ *
+ * Created on 14 de Abril de 2019, 01:40
+ */
+
 #include "Ship.h"
 
 Ship::Ship(){
     
 }
+
+Ship::Ship(const Ship& orig){ 
+}
+
+Ship::~Ship(){    
+}
+
 
 Ship::Ship(int type) {
 
@@ -58,12 +72,6 @@ Ship::Ship(int type) {
     
 }
 
-void Ship::SetDamage(int damage){
-    defense -= damage;
-    if(defense <= 0){
-        //this->delete;   // Destroi o objeto
-    }
-}
 
 int Ship::GetType(){
     return type;
@@ -84,8 +92,3 @@ int Ship::GetBomb(){
 int Ship::GetSpeed(){
     return speed;
 }
-
-/*
-Player Ship::GetPlayer(){
-    return player;
-} */

@@ -11,15 +11,12 @@
  * Created on 13 de Abril de 2019, 23:40
  */
 
-#include <list>
 #include <string>
 #include <stdlib.h>
 
 using namespace std;
 
 //#include "Player.h"
-#include "Ship.h"
-#include "Random.h"
 
 #ifndef PLANET_H
 #define PLANET_H
@@ -34,6 +31,8 @@ class Planet{
     
 public:
     Planet();
+    Planet(const Planet& orig);
+    virtual ~Planet();
     Planet PlanetGenerate();
     
     int GetType();
@@ -49,7 +48,7 @@ private:
     unsigned int type;
     unsigned int production;
     unsigned int foodProduction;
-    //Player player;   Dono do planta
+    //Player player;
 
 };
 

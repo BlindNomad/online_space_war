@@ -14,8 +14,6 @@
 #ifndef SHIP_H
 #define SHIP_H
 
-//#include "Player.h";
-
 #define COLONIZADOR 1
 #define FRAGATA 2
 #define CRUZADOR 3
@@ -26,16 +24,15 @@ class Ship{
     
 public:
     Ship();
+    Ship(const Ship& orig);
+    virtual ~Ship();
     Ship(int type);
-    
-    void SetDamage(int damage);
     
     int GetType();
     int GetAttack();
     int GetDefense();
     int GetBomb();
     int GetSpeed();
-    //Player GetPlayer;
 
 private:
     int type;
@@ -43,7 +40,7 @@ private:
     int defense;
     int bomb;
     int speed;
-    // Player player;
+    
 };
 
 #endif /* SHIP_H */

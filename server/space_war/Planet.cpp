@@ -4,9 +4,22 @@
  * and open the template in the editor.
  */
 
+/* 
+ * File:   Planet.cpp
+ * Author: José C. Pereira <JPereira1330>
+ *
+ * Created on 13 de Abril de 2019, 23:40
+ */
+
 #include "Planet.h"
 
 Planet::Planet() {
+}
+
+Planet::Planet(const Planet& orig){
+}
+
+Planet::~Planet(){
 }
 
 Planet Planet::PlanetGenerate() {
